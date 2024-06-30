@@ -1,0 +1,18 @@
+
+<div [ngClass]="{'dark': darkMode, '': !darkMode}" class="relative">
+    <div class="absolute top-2 right-2"> 
+        <button mat-dialog-close type="button" class="transition-all duration-200 ease-in text-white bg-orange-500 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">
+            
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+
+    </div>
+    <div class="first flex flex-col lg:flex-row items-center bg-white border border-gray-200 rounded shadow md:flex-row md:max-w-3xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-96 md:h-96 md:w-96 md:rounded-none md:rounded-s-lg" [src]="imageUrl" alt="">
+        <div class="texty flex flex-col justify-between p-4 leading-normal">
+            <h5 class="text-center mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{heading}}</h5>
+            <p class="text-justify mb-3 font-normal text-gray-700 dark:text-gray-400">{{content}}</p>
+        </div>
+</div>
+</div>
