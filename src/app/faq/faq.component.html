@@ -1,0 +1,344 @@
+<!-- <iframe src="https://jaycul.github.io/The-Pig-Game/" class="w-full h-[100vh]"></iframe> -->
+<div class="min-h-[70vh] bg-white dark:bg-gray-800 text-orange-600 dark:text-white">
+    <div class="max-w-screen-xl items-center justify-between mx-auto py-10 ">
+        <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-orange-100 dark:bg-gray-800 text-orange-600 dark:text-white">
+            <h2 id="accordion-color-heading-1">
+              <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-800 dark:border-gray-700 dark:text-gray-400 hover:bg-orange-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+                <span>What kind of websites do you build?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+              <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <!-- <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-orange-600 dark:text-orange-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> -->
+                
+                <!-- //Chat STart -->
+                <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                    <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                    <div class="flex flex-col gap-1 w-full max-w-[400px]">
+                    <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                        <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                    </div>
+                    <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                        <p class="text-sm font-normal text-gray-900 dark:text-white"> What kind of websites do you build? </p>
+                    </div>
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <img class="w-8 h-8 rounded-full" src="./../../assets/images/Jaystechub-Logo.png" alt="Jese image">
+                    <div class="flex flex-col gap-1 w-full max-w-[600px]">
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <span class="text-sm font-semibold text-gray-900 dark:text-white">Jay's Tech Hub Ltd</span>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                    </div>
+                    <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                        <div class="text-sm font-normal text-gray-900 dark:text-white"> 
+                            <p>Hi there, These are the Web Packages We offer:</p>
+                            <br>
+                            
+                        <ul class="">
+                            <li *ngFor="let item of offers">
+                                <!-- <img class="h-10" src="./../../assets/images/tick.png" alt=""> -->
+                                <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.imgLink" alt="">
+                                    <div class="flex flex-col justify-between p-4 leading-normal">
+                                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white">{{item.title}}</h5>
+                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{item.description}}</p>
+                                    </div>
+                                </div>
+                                <br>
+                            </li>
+                            
+
+                        </ul>
+                        </div>
+    
+                    </div>
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                    </div>
+                </div>
+     
+                <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                    <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                    <div class="flex flex-col gap-1 w-full max-w-[400px]">
+                    <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                        <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                    </div>
+                    <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                        <p class="text-sm font-normal text-gray-900 dark:text-white">Wow, thanks for the swift reply, I'll go with website number...</p>
+                    </div>
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+            <h2 id="accordion-color-heading-2">
+              <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-800 dark:border-gray-700 dark:text-gray-400 hover:bg-orange-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                <span>How do you charge per website?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                    <!-- <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-orange-600 dark:text-orange-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> -->
+                    
+                    <!-- //Chat STart -->
+                    <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[320px]">
+                        <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                            <p class="text-sm font-normal text-gray-900 dark:text-white"> How do you charge per website? </p>
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/Jaystechub-Logo.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[520px]">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Jay's Tech Hub Ltd</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                            <div class="text-sm font-normal text-gray-900 dark:text-white"> 
+                                <p>At Jay's Tech Hub, our website pricing is tailored to the unique needs and goals of each project. We consider several factors to ensure we provide the best value and quality for our clients. These factors include:</p>
+                                <br>
+                                
+                                <ul class="list-decimal pl-3">
+                                    <li *ngFor="let item of priceDeterminants">
+                                    <!-- <img class="h-10" src="./../../assets/images/tick.png" alt=""> -->
+                                    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+                                        <!-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.imgLink" alt=""> -->
+                                        <div class="flex flex-col justify-between p-4 leading-normal">
+                                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{item.description}}</p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </li>
+                                
+                                
+                            </ul>
+                            <br>
+                            <p>We believe in creating a collaborative partnership with our clients to deliver websites that meet their specific needs and goals. For a detailed quote, we would be happy to discuss your project requirements in a consultation. This way, we can provide a tailored solution that fits your budget and expectations.</p>
+                            </div>
+        
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+         
+                </div>
+            </div>
+            <h2 id="accordion-color-heading-3">
+              <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-800 dark:border-gray-700 dark:text-gray-400 hover:bg-orange-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                <span>How long does it take to build a website?</span>
+                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+              </button>
+            </h2>
+            <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                    <!-- <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-orange-600 dark:text-orange-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> -->
+                    
+                    <!-- //Chat STart -->
+                    <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[320px]">
+                        <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                            <p class="text-sm font-normal text-gray-900 dark:text-white">How long does it take to build a website?</p>
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/Jaystechub-Logo.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[520px]">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Jay's Tech Hub Ltd</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                            <div class="text-sm font-normal text-gray-900 dark:text-white"> 
+                                <p>The time required to build a website can vary significantly depending on several factors, including the complexity and scope of the project, specific client requirements, and the availability of content and resources.</p>
+                                <br>
+                                
+                                <ul class="list-decimal pl-3">
+                                    <li *ngFor="let item of timeFrames">
+                                    <!-- <img class="h-10" src="./../../assets/images/tick.png" alt=""> -->
+                                    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+                                        <!-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.imgLink" alt=""> -->
+                                        <div class="flex flex-col justify-between p-4 leading-normal">
+                                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" [innerHTML]="item.description"></p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </li>
+                                
+                                
+                            </ul>
+                            <br>
+                            <p>Throughout the process, we work closely with our clients to ensure the project stays on track and meets their expectations. Clear communication and collaboration are key to delivering a high-quality website within the agreed timeframe.
+
+                                For a more accurate estimate tailored to your specific project, we would be happy to discuss your requirements in detail during a consultation.
+                                
+                                </p>
+                            </div>
+        
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+         
+                </div>
+            </div>
+            <h2 id="accordion-color-heading-4">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray4200 focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-800 dark:border-gray-700 dark:text-gray-400 hover:bg-orange-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                  <span>What kinds of graphic designs do your company offer?</span>
+                  <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[320px]">
+                        <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                            <p class="text-sm font-normal text-gray-900 dark:text-white">What kinds of graphic designs do your company offer?</p>
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/Jaystechub-Logo.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[520px]">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Jay's Tech Hub Ltd</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                            <div class="text-sm font-normal text-gray-900 dark:text-white"> 
+                                <p>We offer a wide range of graphic design services tailored to meet the diverse needs of our clients. Our offerings include:</p>
+                                <br>
+                                
+                                <ul class="list-decimal pl-3">
+                                    <li *ngFor="let item of graphicOptions">
+                                    <!-- <img class="h-10" src="./../../assets/images/tick.png" alt=""> -->
+                                    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+                                        <!-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.imgLink" alt=""> -->
+                                        <div class="flex flex-col justify-between p-4 leading-normal">
+                                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" [innerHTML]="item.description"></p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </li>
+                                
+                                
+                            </ul>
+                            <br>
+ 
+                            </div>
+        
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            <h2 id="accordion-color-heading-5">
+                <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray4200 focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-800 dark:border-gray-700 dark:text-gray-400 hover:bg-orange-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+                  <span>What file types are to be expected upon completion of graphic designs?</span>
+                  <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-row-reverse items-start justify-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/userIcon.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[320px]">
+                        <div class="flex items-center justify-end space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Client</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-ee-xl rounded-s-xl dark:bg-gray-700">
+                            <p class="text-sm font-normal text-gray-900 dark:text-white">What file types are to be expected upon completion of graphic designs?</p>
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <img class="w-8 h-8 rounded-full" src="./../../assets/images/Jaystechub-Logo.png" alt="Jese image">
+                        <div class="flex flex-col gap-1 w-full max-w-[520px]">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                            <span class="text-sm font-semibold text-gray-900 dark:text-white">Jay's Tech Hub Ltd</span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{{currentTime}}</span>
+                        </div>
+                        <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                            <div class="text-sm font-normal text-gray-900 dark:text-white"> 
+                                <p>At Jay's Tech Hub, we understand the importance of delivering graphic design files in the appropriate formats to suit various needs. We provide our clients with a range of file types, including:
+
+                                </p>
+                                <br>
+                                
+                                <ul class="list-decimal pl-3">
+                                    <li *ngFor="let item of fileTypes">
+                                    <!-- <img class="h-10" src="./../../assets/images/tick.png" alt=""> -->
+                                    <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800">
+                                        <!-- <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.imgLink" alt=""> -->
+                                        <div class="flex flex-col justify-between p-4 leading-normal">
+                                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.title}}</h5>
+                                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" [innerHTML]="item.description"></p>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </li>
+                                
+                                
+                            </ul>
+                            <br>
+                            <p>We ensure that the delivered files are optimized for their intended use, whether for digital platforms, professional printing, or further editing. If you have specific requirements for file formats, we are more than happy to accommodate your needs.</p>
+ 
+                            </div>
+        
+                        </div>
+                        <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+    </div>
+
+</div>
+
+  
