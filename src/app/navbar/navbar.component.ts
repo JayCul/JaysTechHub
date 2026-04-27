@@ -5,9 +5,10 @@ import { Subscription, filter } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private darkModeSubscription: Subscription = new Subscription();

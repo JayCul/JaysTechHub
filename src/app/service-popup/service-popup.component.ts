@@ -4,9 +4,10 @@ import { Subscription } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
 
 @Component({
-  selector: 'app-service-popup',
-  templateUrl: './service-popup.component.html',
-  styleUrls: ['./service-popup.component.scss']
+    selector: 'app-service-popup',
+    templateUrl: './service-popup.component.html',
+    styleUrls: ['./service-popup.component.scss'],
+    standalone: false
 })
 
 

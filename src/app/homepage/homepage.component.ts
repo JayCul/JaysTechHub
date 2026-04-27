@@ -14,9 +14,10 @@ import { DialogModule } from '@angular/cdk/dialog';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss'],
+    selector: 'app-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrls: ['./homepage.component.scss'],
+    standalone: false
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   constructor(
