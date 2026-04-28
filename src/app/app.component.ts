@@ -5,7 +5,7 @@ import { DarkModeService } from './service/dark-mode.service';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import {   RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
