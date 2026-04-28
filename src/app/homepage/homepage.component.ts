@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
@@ -10,14 +11,16 @@ import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
 import { ServicePopupComponent } from '../service-popup/service-popup.component';
-import { DialogModule } from '@angular/cdk/dialog';
-import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-homepage',
     templateUrl: './homepage.component.html',
     styleUrls: ['./homepage.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule],
+    
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   constructor(

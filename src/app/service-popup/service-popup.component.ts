@@ -2,12 +2,15 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-service-popup',
+    imports: [NgClass],
     templateUrl: './service-popup.component.html',
     styleUrls: ['./service-popup.component.scss'],
-    standalone: false
+    standalone: true,
+    
 })
 
 

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { initFlowbite } from 'flowbite';
 
@@ -5,7 +6,9 @@ import { initFlowbite } from 'flowbite';
     selector: 'app-faq',
     templateUrl: './faq.component.html',
     styleUrls: ['./faq.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule],
+    
 })
 export class FaqComponent {
 

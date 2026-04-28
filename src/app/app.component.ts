@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
 import { Subscription } from 'rxjs';
 import { DarkModeService } from './service/dark-mode.service';
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import {   RouterOutlet } from '@angular/router';
 
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule,NavbarComponent, FooterComponent, RouterOutlet,],
 })
 export class AppComponent implements OnInit {
   title = 'Jay\'s Tech Hub';
