@@ -3,14 +3,14 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Collapse, CollapseInterface, initFlowbite } from 'flowbite';
 import { Subscription, filter } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     
 })
 export class NavbarComponent implements OnInit, OnDestroy {

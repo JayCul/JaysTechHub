@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { initFlowbite } from 'flowbite';
 
@@ -7,7 +7,7 @@ import { initFlowbite } from 'flowbite';
     templateUrl: './faq.component.html',
     styleUrls: ['./faq.component.scss'],
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     
 })
 export class FaqComponent {

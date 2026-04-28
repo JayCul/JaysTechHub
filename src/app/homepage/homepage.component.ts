@@ -12,14 +12,14 @@ import { Subscription } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
 import { ServicePopupComponent } from '../service-popup/service-popup.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-homepage',
     templateUrl: './homepage.component.html',
     styleUrls: ['./homepage.component.scss'],
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [ReactiveFormsModule],
     
 })
 export class HomepageComponent implements OnInit, OnDestroy {
