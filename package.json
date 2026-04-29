@@ -29,11 +29,7 @@
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.1",
-    "cors": "^2.8.5",
-    "dotenv": "^17.4.2",
-    "express": "^4.21.0",
-    "resend": "^4.2.0"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
     "@angular/build": "^21.2.8",
