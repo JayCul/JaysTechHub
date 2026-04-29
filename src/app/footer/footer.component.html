@@ -1,44 +1,76 @@
-<footer class="bg-white rounded-b-lg shadow dark:bg-gray-900">
-  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-    <div class="sm:flex sm:items-center sm:justify-center text-center">
-      <!-- <div class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                <img src={{fileLocation}}  class="h-8" alt="NuelJeff Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NuelJeff</span>
-            </div> -->
-      <ul
-        class="flex flex-wrap items-center justify-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
-      >
-        <li class="flex justify-around items-center">
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:+2347041274446" class="hover:underline mx-2 me-4 md:me-6"
-            >(+234) 07041274446</a
-          >
-        </li>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-col">
+        <h4 class="footer-brand">Jay's <span>Tech Hub</span></h4>
+        <p class="footer-about">
+          Empowering businesses with premium digital solutions. Website design, mobile apps,
+          graphics design, and custom tech solutions — tailored to your needs.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/+2347041274446" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
 
-        <li>
-          <i class="fa-brands fa-whatsapp"></i>
-          <a
-            href="https://wa.me/+2347041274446?text=Hi,%20Can%20you%20assist%20me%20with%20...%20?"
-            class="hover:underline mx-2 me-4 md:me-6"
-            >(+234) 07041274446</a
-          >
-        </li>
-        <li>
-          <i class="fa-regular fa-envelope"></i>
-          <a
-            href="mailto:jaystechub@gmail.com"
-            class="hover:underline mx-2 me-4 md:me-6"
-            >jaystechub&#64;gmail.com</a
-          >
-        </li>
-      </ul>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a (click)="scrollToSection('home')" href="javascript:void(0)">Home</a></li>
+          <li><a (click)="scrollToSection('about')" href="javascript:void(0)">About Us</a></li>
+          <li><a (click)="scrollToSection('portfolio')" href="javascript:void(0)">Portfolio</a></li>
+          <li><a (click)="scrollToSection('pricing')" href="javascript:void(0)">Pricing</a></li>
+          <li><a routerLink="/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          @for (s of services; track s) {
+            <li><a (click)="scrollToSection('services')" href="javascript:void(0)">{{ s }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-contact">
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+2347041274446">(+234) 07041274446</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:jaystechub@gmail.com">jaystechub&#64;gmail.com</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/+2347041274446" target="_blank">Chat on WhatsApp</a>
+          </li>
+        </ul>
+        <a href="assets/docs/Jays Tech Hub Profile.pdf" class="footer-download">
+          <i class="fa-solid fa-file-pdf"></i> Company Profile (PDF)
+        </a>
+      </div>
     </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-    <span
-      class="flex flex-row text-sm text-gray-500 justify-center dark:text-gray-400"
-      >© {{ year }}
-      <div class="hover:underline pl-2">Jay's Tech Hub ltd</div>
-      . All Rights Reserved.</span
-    >
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <span>© {{ year }} Jay's Tech Hub Ltd. All Rights Reserved.</span>
+      <span class="footer-cac">RC 7475187</span>
+    </div>
   </div>
 </footer>

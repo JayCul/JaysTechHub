@@ -1,59 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { initFlowbite } from 'flowbite';
 import { Subscription } from 'rxjs';
 import { DarkModeService } from './service/dark-mode.service';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { WhatsappFabComponent } from './whatsapp-fab/whatsapp-fab.component';
 import { RouterOutlet } from '@angular/router';
 
-
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: true,
-    imports: [CommonModule,NavbarComponent, FooterComponent, RouterOutlet,],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NavbarComponent, FooterComponent, WhatsappFabComponent, RouterOutlet],
 })
 export class AppComponent implements OnInit {
-  title = 'Jay\'s Tech Hub';
+  title = "Jay's Tech Hub";
   darkMode: any;
-  private darkModeSubscription!: Subscription; // Use definite assignment assertion
+  private darkModeSubscription!: Subscription;
 
   constructor(private darkModeService: DarkModeService) {}
-  
-  onActivate(event:any) {
-    // window.scroll(0,0);
- 
-    window.scroll({ 
-            top: 0, 
-            left: 0, 
-            behavior: 'smooth' 
-     });
- 
-     //or document.body.scrollTop = 0;
-     //or document.querySelector('body').scrollTo(0,0)
+
+  onActivate(event: any) {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 
   ngOnInit(): void {
-    initFlowbite();
-    // Check initial dark mode state
     this.darkMode = this.darkModeService.checkInitialDarkMode();
-    console.log("Initial", this.darkMode);
-    
-    // Subscribe to dark mode changes
-    this.darkModeSubscription = this.darkModeService.getDarkModeChangeObservable().subscribe(
-      (isDarkMode) => {
+
+    this.darkModeSubscription = this.darkModeService
+      .getDarkModeChangeObservable()
+      .subscribe((isDarkMode) => {
         this.darkMode = isDarkMode;
-      }
-    );
+      });
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe to prevent memory leaks
     if (this.darkModeSubscription) {
       this.darkModeSubscription.unsubscribe();
     }
   }
-
 }

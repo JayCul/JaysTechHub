@@ -1,61 +1,154 @@
-<nav class=" bg-white text-black dark:bg-[#666666] transition-bg duration-500 ease-in-out  dark:text-white sticky top-0 right-0 z-50">
-  <!-- bg-gradient-to-b from-orange-400 to-orange-400 border-gray-200 dark:bg-gradient-to-t dark:from-orange-600 dark:to-orange-600 -->
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#home" pageScroll (click)="routeToHome()" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={{fileLocation}} class="h-16" alt="NuelJeff Logo" />
+<!-- Desktop Navbar -->
+<nav
+  class="navbar"
+  [class.scrolled]="scrolled"
+  [class.dark-nav]="darkMode"
+>
+  <div class="nav-container">
+    <!-- Logo -->
+    <a class="nav-logo" (click)="routeToHome()" href="javascript:void(0)">
+      <img [src]="fileLocation" alt="Jay's Tech Hub Logo" />
     </a>
-    <div class="justify-end">
-      <button type="button" (click)="toggleDarkMode()" class=" md:hidden inline-flex items-center p-4 mr-7 justify-center text-sm text-gray-500 rounded-lg bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:bg-slate-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-        <span class="sr-only">Dark Mode Switch</span>
-        <i class="{{themeIcon}} dark:text-white "></i>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+        <li>
+          <a
+            (click)="scrollToSection('home')"
+            [class.active]="activeSection === 'home'"
+            href="javascript:void(0)"
+          >Home</a>
+        </li>
+        <li>
+          <a
+            (click)="scrollToSection('about')"
+            [class.active]="activeSection === 'about'"
+            href="javascript:void(0)"
+          >About</a>
+        </li>
+        <li>
+          <a
+            (click)="scrollToSection('services')"
+            [class.active]="activeSection === 'services'"
+            href="javascript:void(0)"
+          >Services</a>
+        </li>
+        <li>
+          <a
+            (click)="scrollToSection('portfolio')"
+            [class.active]="activeSection === 'portfolio'"
+            href="javascript:void(0)"
+          >Portfolio</a>
+        </li>
+        <li>
+          <a
+            (click)="scrollToSection('pricing')"
+            [class.active]="activeSection === 'pricing'"
+            href="javascript:void(0)"
+          >Pricing</a>
+        </li>
+         <li>
+          <a
+            (click)="routeToFAQ()"
+            [class.active]="!home"
+            href="javascript:void(0)"
+          >FAQ</a>
+        </li>
+       
+    </ul>
+
+    <!-- Desktop Actions -->
+    <div class="nav-actions">
+      <button
+        class="theme-toggle"
+        (click)="toggleDarkMode()"
+        [attr.aria-label]="darkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <i [class]="themeIcon"></i>
       </button>
-
-
-      <button data-collapse-toggle="navbar-default" id="nav-menu-button" type="button" (click)="toggleMenu()" class="inline-flex items-center  m-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:bg-slate-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <i class="{{menuIcon}}" ></i>
-      </button>
-
-
+      <a class="btn-primary nav-cta" (click)="scrollToSection('contact')" href="javascript:void(0)">
+        Get a Quote
+      </a>
     </div>
 
-
-    <div class="hidden w-full md:block md:w-auto justify-normal content-center" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
-        <li>
-          <button type="button" (click)="toggleDarkMode()" class=" hidden md:block items-center p-3 px-4 mr-7 justify-center text-sm text-gray-500 rounded-lg bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:bg-slate-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-            <span class="sr-only">Dark Mode Switch</span>
-            <i class="{{themeIcon}}  dark:text-white "></i>
-          </button>
-        </li>
-        <li>
-          <a (click)="routeToHome()" href="#home" class="block py-2 px-3 my-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-current="page">Home</a>
-        </li>
-        @if (home) {
-          <li>
-            @if (home) {
-              <a pageScroll href="#about" class="block py-2 px-3 my-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-            }
-          </li>
-        }
-        @if (home) {
-          <li>
-            @if (home) {
-              <a pageScroll href="#services" class="block py-2 px-3  my-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-            }
-          </li>
-        }
-        @if (home) {
-          <li>
-            @if (home) {
-              <a pageScroll href="#contact" class="block py-2 px-3  my-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-            }
-          </li>
-        }
-        <li>
-          <a (click)="routeToFAQ()" class="block py-2 px-3  my-2 text-gray-900 rounded active:text-blue-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">FAQs  </a>
-        </li>
-      </ul>
+    <!-- Mobile Actions -->
+    <div class="nav-mobile-actions">
+      <button class="theme-toggle" (click)="toggleDarkMode()">
+        <i [class]="themeIcon"></i>
+      </button>
+      <button
+        class="hamburger"
+        (click)="toggleMobileMenu()"
+        [class.is-open]="mobileMenuOpen"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div
+  class="mobile-overlay"
+  [class.is-open]="mobileMenuOpen"
+  (click)="closeMobileMenu()"
+></div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" [class.is-open]="mobileMenuOpen">
+  <div class="drawer-header">
+    <img [src]="fileLocation" alt="Jay's Tech Hub Logo" class="drawer-logo" />
+    <button class="drawer-close" (click)="closeMobileMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <ul class="drawer-links">
+   
+      <li>
+        <a (click)="scrollToSection('home')" [class.active]="activeSection === 'home'" href="javascript:void(0)">
+          <i class="fa-solid fa-house"></i> Home
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollToSection('about')" [class.active]="activeSection === 'about'" href="javascript:void(0)">
+          <i class="fa-solid fa-building"></i> About
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollToSection('services')" [class.active]="activeSection === 'services'" href="javascript:void(0)">
+          <i class="fa-solid fa-gear"></i> Services
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollToSection('portfolio')" [class.active]="activeSection === 'portfolio'" href="javascript:void(0)">
+          <i class="fa-solid fa-briefcase"></i> Portfolio
+        </a>
+      </li>
+      <li>
+        <a (click)="scrollToSection('pricing')" [class.active]="activeSection === 'pricing'" href="javascript:void(0)">
+          <i class="fa-solid fa-tag"></i> Pricing
+        </a>
+      </li>
+      <li>
+        <a (click)="routeToFAQ()" href="javascript:void(0)" [class.active]="!home">
+          <i class="fa-solid fa-circle-question"></i> FAQ
+        </a>
+      </li>
+   
+  </ul>
+
+  <div class="drawer-cta">
+    <a class="btn-primary" style="width: 100%; justify-content: center;" (click)="scrollToSection('contact')" href="javascript:void(0)">
+      <i class="fa-solid fa-paper-plane"></i> Get a Quote
+    </a>
+  </div>
+
+  <div class="drawer-contact">
+    <a href="tel:+2347041274446"><i class="fa-solid fa-phone"></i> (+234) 07041274446</a>
+    <a href="mailto:jaystechub@gmail.com"><i class="fa-solid fa-envelope"></i> jaystechub&#64;gmail.com</a>
+  </div>
+</div>

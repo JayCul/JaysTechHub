@@ -1,115 +1,151 @@
-import { Component, OnDestroy, OnInit, booleanAttribute } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Collapse, CollapseInterface, initFlowbite } from 'flowbite';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  HostListener,
+  ElementRef,
+} from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
 import { DarkModeService } from '../service/dark-mode.service';
-
+import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss'],
-    standalone: true,
-    imports: [],
-    
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private darkModeSubscription: Subscription = new Subscription();
 
   constructor(
     public router: Router,
-    public route: ActivatedRoute,
-    private darkModeService: DarkModeService
+    private darkModeService: DarkModeService,
+    private el: ElementRef
   ) {}
 
-  // set the target element that will be collapsed or expanded (eg. navbar menu)
-  whiteLogo: string = '../../assets/images/Jays-large-nobg-white-text.png';
-  darkLogo: string = '../../assets/images/Jays-large-nobg.png';
+  whiteLogo: string = 'assets/images/Jays-large-nobg-white-text.png';
+  darkLogo: string = 'assets/images/Jays-large-nobg.png';
   home: boolean = true;
-  sunLogo: string = 'fa-regular fa-sun';
-  moonLogo: string = 'fa-regular fa-moon';
-  themeIcon: string = this.moonLogo;
-  menuIcon: string = 'fa-solid fa-bars';
+  sunIcon: string = 'fa-regular fa-sun';
+  moonIcon: string = 'fa-regular fa-moon';
+  themeIcon: string = this.moonIcon;
   fileLocation: string = this.darkLogo;
-  darkMode: boolean | any = localStorage.getItem('isDarkMode');
+  darkMode: boolean = false;
+  mobileMenuOpen: boolean = false;
+  scrolled: boolean = false;
+  activeSection: string = 'home';
 
-  // toggleTheme(){
-  //   localStorage.setItem('isDarkMode', this.darkMode ? 'true' : 'false');
+  private sectionIds: string[] = ['home', 'about', 'services', 'portfolio', 'pricing', 'contact'];
 
-  // }
+  @HostListener('window:scroll')
+  onScroll() {
+    this.scrolled = window.scrollY > 50;
+    this.updateActiveSection();
+  }
 
-  toggleMenu() {
-    if (this.menuIcon === 'fa-solid fa-bars') {
-      this.menuIcon = 'fa-solid fa-xmark';
-    } else if (this.menuIcon === 'fa-solid fa-xmark') {
-      this.menuIcon = 'fa-solid fa-bars';
+  private updateActiveSection(): void {
+    if (!this.home) return;
+
+    for (let i = this.sectionIds.length - 1; i >= 0; i--) {
+      const el = document.getElementById(this.sectionIds[i]);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 120) {
+          this.activeSection = this.sectionIds[i];
+          return;
+        }
+      }
+    }
+    this.activeSection = 'home';
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+    if (this.mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  scrollToSection(sectionId: string): void {
+    this.closeMobileMenu();
+    if (this.router.url !== '/' && this.router.url !== '') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      });
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
   routeToFAQ(): void {
+    this.closeMobileMenu();
     this.router.navigate(['/faq']);
     this.home = false;
+    this.activeSection = ''
   }
 
   routeToHome(): void {
+    this.closeMobileMenu();
     this.router.navigate(['/']);
     this.home = true;
   }
 
-  toggleLogo() {
-    // this.darkMode = localStorage.getItem("isDarkMode");
-
-    if (localStorage.getItem('isDarkMode') == 'false') {
-      console.log('Moon Logo');
-      this.fileLocation = this.darkLogo;
-      this.themeIcon = this.moonLogo;
-    } else if (localStorage.getItem('isDarkMode') == 'true') {
-      console.log('Sun Logo');
-      this.themeIcon = this.sunLogo;
+  toggleLogo(): void {
+    if (this.darkMode) {
+      this.themeIcon = this.sunIcon;
       this.fileLocation = this.whiteLogo;
+    } else {
+      this.themeIcon = this.moonIcon;
+      this.fileLocation = this.darkLogo;
     }
   }
 
   toggleDarkMode(): void {
-    // this.darkMode = localStorage.getItem('isDarkMode');
     this.darkMode = !this.darkMode;
-    localStorage.setItem('isDarkMode', this.darkMode.toString());
-    // Optionally notify service or other components
     this.toggleLogo();
     this.darkModeService.setDarkMode(this.darkMode);
   }
 
   ngOnInit(): void {
-    initFlowbite();
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         if (event.url === '/faq') {
           this.home = false;
-
-          // Perform your specific action here
         } else {
           this.home = true;
-          // Perform other actions or leave this part empty
         }
       });
-    console.log(this.router.url);
-    this.toggleLogo();
-    // Check initial dark mode state
-    this.darkMode = this.darkModeService.checkInitialDarkMode();
 
-    // Subscribe to dark mode changes
+    this.darkMode = this.darkModeService.checkInitialDarkMode();
+    this.toggleLogo();
+
     this.darkModeSubscription = this.darkModeService
       .getDarkModeChangeObservable()
       .subscribe((isDarkMode) => {
         this.darkMode = isDarkMode;
+        this.toggleLogo();
       });
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe to prevent memory leaks
     if (this.darkModeSubscription) {
       this.darkModeSubscription.unsubscribe();
     }
+    document.body.style.overflow = '';
   }
 }

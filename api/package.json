@@ -1,0 +1,16 @@
+{
+  "name": "jaystechhub-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless API proxy for Jay's Tech Hub contact form (Resend)",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "resend": "^4.2.0"
+  }
+}
