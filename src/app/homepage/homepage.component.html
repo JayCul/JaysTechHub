@@ -2,64 +2,94 @@
      HERO SECTION
      ════════════════════════════════════════════════════════ -->
 <section id="home" class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content container-main">
-    <div class="hero-badge animate-on-scroll">
-      <span class="badge">
-        <i class="fa-solid fa-certificate"></i> &nbsp;
-        Trusted by 50+ businesses across Nigeria</span>
-    </div>
+  <div class="hero-bg">
+    <div class="hero-glow hero-glow--orange"></div>
+    <div class="hero-glow hero-glow--blue"></div>
+    <div class="hero-noise"></div>
+  </div>
 
-    <h1 class="hero-title animate-on-scroll delay-1">
-      We Build Digital Products<br />
-      That <span class="text-accent">Grow Your Business</span>
-    </h1>
+  <div class="hero-layout container-main">
+    <!-- Left Column — Copy -->
+    <div class="hero-copy">
+      <div class="hero-reg animate-on-scroll">
+        <span class="hero-reg-pill">
+          <i class="fa-solid fa-certificate"></i>
+          RC 7475187 — CAC Registered
+        </span>
+      </div>
 
-    <div class="hero-rotating">
-      <span class="hero-rotating-label">We design &amp; develop:</span>
-      <div class="hero-rotating-words">
-        @for (text of texts; track text; let i = $index) {
-          <span
-            class="rotating-word"
-            [class.active]="i === currentIndex"
-            [class.exiting]="i === previousIndex"
-          >{{ text }}</span>
-        }
+      <h1 class="hero-headline animate-on-scroll delay-1">
+        We don't just build websites.<br/>
+        We build <span class="hero-headline-accent">businesses.</span>
+      </h1>
+
+      <p class="hero-desc animate-on-scroll delay-2">
+        Jay's Tech Hub is a Nigerian digital studio that designs and engineers
+        websites, mobile apps, and brand identities — built to convert, not just look pretty.
+      </p>
+
+      <div class="hero-actions animate-on-scroll delay-3">
+        <a class="btn-primary btn-hero" href="#contact">
+          Start Your Project
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a class="btn-ghost" href="#portfolio">
+          See Our Work
+        </a>
+      </div>
+
+      <!-- Compact trust line -->
+      <div class="hero-trust animate-on-scroll delay-4">
+        <div class="hero-trust-avatars">
+          <span class="avatar-dot" style="background:#f97316;">
+            <img src="assets/images/hero/mncc-logo.png" alt="">
+          </span>
+          <span class="avatar-dot" style="background:#3b82f6;">
+            <img src="assets/images/hero/rachee-stores.png" alt="">
+          </span>
+          <span class="avatar-dot" style="background:#ae8300;">
+            <img src="assets/images/hero/dimmas-kitchen.png" alt="">
+          </span>
+        </div>
+        <span class="hero-trust-text">Trusted by <strong>50+</strong> businesses across Nigeria</span>
       </div>
     </div>
 
-    <p class="hero-subtitle animate-on-scroll delay-2">
-      From stunning websites to powerful mobile apps — we transform your ideas into
-      digital experiences that captivate audiences and drive results.
-    </p>
-
-    <div class="hero-ctas animate-on-scroll delay-3">
-      <a class="btn-primary" href="#contact">
-        <i class="fa-solid fa-paper-plane"></i> Get Started
-      </a>
-      <a class="btn-secondary" href="#portfolio">
-        <i class="fa-solid fa-eye"></i> View Our Work
-      </a>
+    <!-- Right Column — Floating Project Showcase -->
+    <div class="hero-showcase animate-on-scroll delay-2">
+      <div class="showcase-stack">
+        <div class="showcase-card showcase-card--1"
+             [style.z-index]="getCardZIndex(0)"
+             [class.on-top]="showcasePhase === 0">
+          <img src="assets/images/hero/web.jpg" alt="NuelJeff International — Website by Jay's Tech Hub" loading="eager" />
+        </div>
+        <div class="showcase-card showcase-card--2"
+             [style.z-index]="getCardZIndex(1)"
+             [class.on-top]="showcasePhase === 1">
+          <img src="assets/images/hero/design.jpg" alt="Logistics Platform — Built by Jay's Tech Hub" loading="eager" />
+        </div>
+        <div class="showcase-card showcase-card--3"
+             [style.z-index]="getCardZIndex(2)"
+             [class.on-top]="showcasePhase === 2">
+          <img src="assets/images/hero/data.jpg" alt="Portfolio Website — Designed by Jay's Tech Hub" loading="eager" />
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Stats Row -->
-    <div id="stats-section" class="hero-stats animate-on-scroll delay-4">
+  <!-- Stats Strip -->
+  <div class="hero-stats-strip">
+    <div id="stats-section" class="hero-stats-inner container-main animate-on-scroll delay-4">
       @for (stat of stats; track stat.label) {
-        <div class="stat-item">
-          <span class="stat-value">{{ stat.value }}{{ stat.suffix }}</span>
-          <span class="stat-label">{{ stat.label }}</span>
+        <div class="stat-chip">
+          <span class="stat-chip-value">{{ stat.value }}{{ stat.suffix }}</span>
+          <span class="stat-chip-label">{{ stat.label }}</span>
         </div>
       }
     </div>
   </div>
-
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-arrow">
-      <i class="fa-solid fa-chevron-down"></i>
-    </div>
-  </div>
 </section>
+
 
 <!-- ════════════════════════════════════════════════════════
      ABOUT SECTION
@@ -73,7 +103,7 @@
       Passionate About Crafting <span class="text-accent">Digital Excellence</span>
     </h2>
     <p class="section-subheading animate-on-scroll delay-2">
-      At Jay's Tech Hub Limited, we empower businesses and individuals to thrive in the digital age.
+      At Jay's Tech Hub Limited, we empower businesses and individuals to thrive in this fast-paced digital age.
       Endorsed and registered by the Corporate Affairs Commission of Nigeria (RC 7475187).
     </p>
 
@@ -565,7 +595,7 @@
           </div>
         </a>
 
-        <a href="https://www.instagram.com/" target="_blank" class="contact-info-card solid-card">
+        <a href="https://www.instagram.com/jaystechub/" target="_blank" class="contact-info-card solid-card">
           <div class="contact-info-icon" style="background: rgba(225,48,108,0.1); color: #e1306c;">
             <i class="fa-brands fa-instagram"></i>
           </div>
@@ -575,7 +605,7 @@
           </div>
         </a>
 
-        <a href="https://www.facebook.com/" target="_blank" class="contact-info-card solid-card">
+        <a href="https://www.facebook.com/people/Jays-Tech-Hub/61589229351971/" target="_blank" class="contact-info-card solid-card">
           <div class="contact-info-icon" style="background: rgba(24,119,242,0.1); color: #1877f2;">
             <i class="fa-brands fa-facebook"></i>
           </div>

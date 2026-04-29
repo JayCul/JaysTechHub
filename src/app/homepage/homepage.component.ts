@@ -71,6 +71,17 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
   ];
   statsAnimated = false;
 
+  // ── Showcase Shuffle ──
+  showcasePhase: number = 0;
+  private showcaseInterval: any;
+
+  getCardZIndex(cardIndex: number): number {
+    const position = (cardIndex - this.showcasePhase + 3) % 3;
+    if (position === 0) return 3; // Front
+    if (position === 1) return 2; // Middle
+    return 1; // Back
+  }
+
   // ── Services ──
   services = [
     {
@@ -194,6 +205,13 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       image: 'assets/images/projects/Hospital-management-system.png',
     },
     // Design Projects (from assets/images/designs/)
+    {
+      name: '7th Heaven Gods',
+      category: 'design',
+      categoryLabel: 'Logo Design',
+      description: 'E-Sports team logo design.',
+      image: 'assets/images/designs/7th-Heaven-Logo.jpg',
+    },
     {
       name: 'Berakah Technologies',
       category: 'design',
@@ -470,6 +488,11 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.startTextRotation();
     this.resetTestimonialTimer();
+
+    // Start endless showcase shuffle
+    this.showcaseInterval = setInterval(() => {
+      this.showcasePhase = (this.showcasePhase + 1) % 3;
+    }, 3000);
     this.darkMode = this.darkModeService.checkInitialDarkMode();
     this.darkModeSubscription = this.darkModeService
       .getDarkModeChangeObservable()
@@ -485,6 +508,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     clearInterval(this.rotationInterval);
     clearInterval(this.testimonialInterval);
+    clearInterval(this.showcaseInterval);
     if (this.darkModeSubscription) {
       this.darkModeSubscription.unsubscribe();
     }
