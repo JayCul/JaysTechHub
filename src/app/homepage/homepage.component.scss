@@ -44,7 +44,11 @@
   &--orange {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.35), transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(249, 115, 22, 0.35),
+      transparent 70%
+    );
     top: 10%;
     left: -5%;
   }
@@ -52,7 +56,11 @@
   &--blue {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 70%);
+    background: radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.2),
+      transparent 70%
+    );
     bottom: 5%;
     right: -3%;
     animation-delay: -8s;
@@ -83,8 +91,12 @@
 }
 
 @keyframes glow-drift {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, -20px) scale(1.15); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, -20px) scale(1.15);
+  }
 }
 
 /* Layout — 2-column asymmetric grid */
@@ -289,10 +301,11 @@
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(249, 115, 22, 0.08);
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-              box-shadow 0.6s ease,
-              opacity 0.6s ease,
-              filter 0.6s ease;
+  transition:
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.6s ease,
+    opacity 0.6s ease,
+    filter 0.6s ease;
   will-change: transform;
 
   img {
@@ -350,18 +363,33 @@
 }
 
 @keyframes card-float-1 {
-  0%, 100% { transform: rotateY(-8deg) rotateX(4deg) translateZ(40px) translateY(0); }
-  50% { transform: rotateY(-8deg) rotateX(4deg) translateZ(40px) translateY(-12px); }
+  0%,
+  100% {
+    transform: rotateY(-8deg) rotateX(4deg) translateZ(40px) translateY(0);
+  }
+  50% {
+    transform: rotateY(-8deg) rotateX(4deg) translateZ(40px) translateY(-12px);
+  }
 }
 
 @keyframes card-float-2 {
-  0%, 100% { transform: rotateY(-12deg) rotateX(2deg) translateZ(-20px) translateY(0); }
-  50% { transform: rotateY(-12deg) rotateX(2deg) translateZ(-20px) translateY(-8px); }
+  0%,
+  100% {
+    transform: rotateY(-12deg) rotateX(2deg) translateZ(-20px) translateY(0);
+  }
+  50% {
+    transform: rotateY(-12deg) rotateX(2deg) translateZ(-20px) translateY(-8px);
+  }
 }
 
 @keyframes card-float-3 {
-  0%, 100% { transform: rotateY(-6deg) rotateX(6deg) translateZ(-60px) translateY(0); }
-  50% { transform: rotateY(-6deg) rotateX(6deg) translateZ(-60px) translateY(-15px); }
+  0%,
+  100% {
+    transform: rotateY(-6deg) rotateX(6deg) translateZ(-60px) translateY(0);
+  }
+  50% {
+    transform: rotateY(-6deg) rotateX(6deg) translateZ(-60px) translateY(-15px);
+  }
 }
 
 /* ── Stats Strip — bottom of hero ── */
@@ -408,7 +436,6 @@
   letter-spacing: 0.06em;
   font-weight: 500;
 }
-
 
 /* ════════════════════════════════════════════════════════════
    ABOUT SECTION
@@ -477,6 +504,7 @@
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
+  align-items: start;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -873,7 +901,9 @@
 
   &.highlighted {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 1px var(--color-primary), 0 20px 40px var(--color-primary-glow);
+    box-shadow:
+      0 0 0 1px var(--color-primary),
+      0 20px 40px var(--color-primary-glow);
     transform: scale(1.02);
 
     &:hover {
@@ -1085,21 +1115,29 @@
 
   /* Validation States */
   &.input-valid {
-    > i:first-child { color: #10b981; }
-    input, select {
+    > i:first-child {
+      color: #10b981;
+    }
+    input,
+    select {
       border-color: #10b981;
     }
-    input:focus, select:focus {
+    input:focus,
+    select:focus {
       box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
     }
   }
 
   &.input-invalid {
-    > i:first-child { color: #ef4444; }
-    input, select {
+    > i:first-child {
+      color: #ef4444;
+    }
+    input,
+    select {
       border-color: #ef4444;
     }
-    input:focus, select:focus {
+    input:focus,
+    select:focus {
       box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
     }
   }
@@ -1113,7 +1151,9 @@
   pointer-events: none;
   animation: fadeInUp 0.3s ease;
 
-  &.valid { color: #10b981; }
+  &.valid {
+    color: #10b981;
+  }
 }
 
 textarea {
@@ -1156,7 +1196,9 @@ textarea {
   margin-left: auto;
   transition: color 0.2s ease;
 
-  &.low { color: #ef4444; }
+  &.low {
+    color: #ef4444;
+  }
 }
 
 .form-error {
@@ -1200,7 +1242,9 @@ textarea {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-note {

@@ -24,7 +24,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     private builder: FormBuilder,
     private toastr: ToastrService,
     private darkModeService: DarkModeService,
-    private emailService: EmailService
+    private emailService: EmailService,
   ) {}
 
   ContactForm: FormGroup = this.builder.group({
@@ -34,7 +34,10 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     Company: new FormControl(''),
     Service: new FormControl('', [Validators.required]),
     Budget: new FormControl(''),
-    Message: new FormControl('', [Validators.required, Validators.minLength(20)]),
+    Message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(20),
+    ]),
   });
 
   submitting = false;
@@ -56,7 +59,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     'Mobile Apps',
     'Logos & Graphics',
     'User Interfaces',
-    'Custom Solutions',
+    'AI Solutions',
   ];
   currentIndex = 0;
   previousIndex = -1;
@@ -93,7 +96,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       color: '#3b82f6',
       expanded: false,
       details:
-        'We create visually stunning and highly functional websites tailored to your brand\'s unique identity. Our websites are designed with user experience in mind, ensuring they are not only easy to navigate but also responsive across all screen sizes.',
+        "We create visually stunning and highly functional websites tailored to your brand's unique identity. Our websites are designed with user experience in mind, ensuring they are not only easy to navigate but also responsive across all screen sizes.",
       img: 'assets/images/computer-phone-tablet-desk_852340-14728.jpg',
     },
     {
@@ -122,14 +125,14 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
     },
     {
       id: 4,
-      name: 'Custom Solutions',
+      name: 'AI Solutions',
       description:
-        'Web applications, integrated systems, and tailored digital products for unique business needs.',
-      icon: 'fa-solid fa-code',
+        'Intelligent software solutions powered by artificial intelligence to drive innovation and efficiency.',
+      icon: 'fa-solid fa-brain',
       color: '#f59e0b',
       expanded: false,
       details:
-        'We are adept at developing custom digital solutions — whether it\'s a custom web application, an advanced digital marketing strategy, or an integrated solution that combines various services.',
+        'We build intelligent AI solutions that automate workflows, streamline operations, and enhance decision-making. From AI agents and document processing to predictive analytics and customer support automation, our solutions help businesses reduce costs and scale efficiently.',
       img: 'assets/images/customized-solutions-500x500.webp',
     },
     {
@@ -166,42 +169,48 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: 'NuelJeff International',
       category: 'web',
       categoryLabel: 'Website',
-      description: 'Corporate website for an international trading & logistics company.',
+      description:
+        'Corporate website for an international trading & logistics company.',
       image: 'assets/images/projects/NuelJeff-International.png',
     },
     {
       name: 'Alone Portfolio',
       category: 'web',
       categoryLabel: 'Website',
-      description: 'Personal portfolio website with modern design and smooth animations.',
+      description:
+        'Personal portfolio website with modern design and smooth animations.',
       image: 'assets/images/projects/Alone-portfolio.png',
     },
     {
       name: 'Doris Portfolio',
       category: 'web',
       categoryLabel: 'Website',
-      description: 'Creative portfolio website showcasing work with a unique aesthetic.',
+      description:
+        'Creative portfolio website showcasing work with a unique aesthetic.',
       image: 'assets/images/projects/Doris-portfolio.png',
     },
     {
       name: 'Logistics Portal',
       category: 'web',
       categoryLabel: 'Web App',
-      description: 'Full-featured logistics management platform with real-time tracking.',
+      description:
+        'Full-featured logistics management platform with real-time tracking.',
       image: 'assets/images/projects/Logistics-portal.png',
     },
     {
       name: 'Admin Dashboard',
       category: 'web',
       categoryLabel: 'Web App',
-      description: 'Admin panel for logistics operations with analytics and management tools.',
+      description:
+        'Admin panel for logistics operations with analytics and management tools.',
       image: 'assets/images/projects/Logistics-portal-admin-panel.png',
     },
     {
       name: 'Hospital Management System',
       category: 'web',
       categoryLabel: 'Web App',
-      description: 'Healthcare management platform for patient records and operations.',
+      description:
+        'Healthcare management platform for patient records and operations.',
       image: 'assets/images/projects/Hospital-management-system.png',
     },
     // Design Projects (from assets/images/designs/)
@@ -223,14 +232,16 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: "Dimma's Kitchen",
       category: 'design',
       categoryLabel: 'Ad Design',
-      description: 'Promotional advertisement design for a food & catering business.',
-      image: 'assets/images/designs/Dimma\'s-Kitchen-ad.jpg',
+      description:
+        'Promotional advertisement design for a food & catering business.',
+      image: "assets/images/designs/Dimma's-Kitchen-ad.jpg",
     },
     {
-      name: "Programming ESP32 and Arduino",
+      name: 'Programming ESP32 and Arduino',
       category: 'design',
       categoryLabel: 'Flyer Design',
-      description: 'Professional flyer design for event promotion and marketing.',
+      description:
+        'Professional flyer design for event promotion and marketing.',
       image: 'assets/images/designs/Israels-flyer.jpg',
     },
     {
@@ -253,7 +264,8 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: 'Starter',
       price: '₦200,000',
       priceNote: 'Excluding domain costs',
-      description: 'Perfect for small businesses looking to establish their online presence.',
+      description:
+        'Perfect for small businesses looking to establish their online presence.',
       cta: 'Get Started',
       highlighted: false,
       features: [
@@ -271,7 +283,8 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: 'Professional',
       price: 'Custom Quote',
       priceNote: 'Tailored to your needs',
-      description: 'For growing businesses that need advanced features and functionality.',
+      description:
+        'For growing businesses that need advanced features and functionality.',
       cta: 'Contact for Quote',
       highlighted: true,
       features: [
@@ -291,7 +304,8 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
       name: 'Enterprise',
       price: 'Custom Quote',
       priceNote: 'For large-scale projects',
-      description: 'Full-scale digital solutions for enterprises with complex requirements.',
+      description:
+        'Full-scale digital solutions for enterprises with complex requirements.',
       cta: 'Contact for Quote',
       highlighted: false,
       features: [
@@ -423,12 +437,14 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' },
     );
 
     setTimeout(() => {
       document
-        .querySelectorAll('.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale-in')
+        .querySelectorAll(
+          '.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale-in',
+        )
         .forEach((el) => this.observer.observe(el));
     }, 100);
   }
@@ -455,8 +471,8 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         this.submitting = false;
         this.submitted = true;
         this.toastr.success(
-          'Your message has been sent! We\'ll get back to you within 24 hours.',
-          'Message Sent! 🚀'
+          "Your message has been sent! We'll get back to you within 24 hours.",
+          'Message Sent! 🚀',
         );
         this.ContactForm.reset();
 
@@ -469,7 +485,7 @@ export class HomepageComponent implements OnInit, OnDestroy, AfterViewInit {
         this.toastr.error(
           'Something went wrong. Please try again or contact us via WhatsApp.',
           'Failed to Send',
-          { timeOut: 5000 }
+          { timeOut: 5000 },
         );
       },
     });

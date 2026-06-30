@@ -15,7 +15,7 @@ export class FooterComponent {
     'Website Design',
     'Graphics Design',
     'Mobile App Development',
-    'Custom Solutions',
+    'AI Solutions',
     'UI/UX Design',
     'Support & Maintenance',
   ];
